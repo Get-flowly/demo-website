@@ -4,6 +4,7 @@
 
   // header shadow + mobile bar
   const header = $('.header'), mbar = $('.mbar'), hero = $('.hero');
+  if (!header || !hero) return;
   const onScroll = () => {
     header.classList.toggle('is-scrolled', scrollY > 10);
     if (mbar) mbar.classList.toggle('is-on', scrollY > hero.offsetHeight * 0.6);
