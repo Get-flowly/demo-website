@@ -55,27 +55,14 @@
   };
   docs.forEach(d => d.addEventListener('change', upd));
 
-  // tabs
-  $$('[data-tabs]').forEach(box => {
-    const tabs = $$('[role=tab]', box);
-    const select = t => {
-      tabs.forEach(x => {
-        const on = x === t;
-        x.setAttribute('aria-selected', on);
-        x.tabIndex = on ? 0 : -1;
-        $('#' + x.getAttribute('aria-controls')).hidden = !on;
-      });
-    };
-    tabs.forEach((t, i) => {
-      t.addEventListener('click', () => select(t));
-      t.addEventListener('keydown', e => {
-        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        if (!d) return;
-        const n = tabs[(i + d + tabs.length) % tabs.length];
-        select(n); n.focus();
-      });
-    });
-  });
+  // Bestattungsart cards -> jump to matching price card, open details, highlight
+  $$('[data-jump]').forEach(a => a.addEventListener('click', () => {
+    const el = $(a.hash); if (!el) return;
+    el.classList.add('is-in');
+    const det = $('details', el); if (det) det.open = true;
+    $$('.price').forEach(p => p.classList.toggle('is-target', p === el));
+    clearTimeout(window.__hl); window.__hl = setTimeout(() => el.classList.remove('is-target'), 2600);
+  }));
 
   // reviews slider
   const track = $('#reviews');
@@ -131,7 +118,7 @@
   $$('[data-pick]').forEach(b => b.addEventListener('click', () => {
     const v = b.dataset.pick;
     $('input[value="Kostenvoranschlag / Preisanfrage"]').checked = true;
-    const art = /See/.test(v) ? 'Seebestattung' : 'Feuerbestattung';
+    const art = /See/.test(v) ? 'Seebestattung' : /Erd/.test(v) ? 'Erdbestattung' : 'Feuerbestattung';
     $(`input[name=art][value="${art}"]`).checked = true;
     form.nachricht.value = `Ich interessiere mich für: ${v}`;
     show(2);

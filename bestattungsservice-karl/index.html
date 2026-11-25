@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero.jpg" media="(min-width: 761px)">
 <link rel="preload" as="image" href="assets/img/hero-sm.jpg" media="(max-width: 760px)">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
 
@@ -193,47 +193,43 @@
       <p class="head__lead">Die Art, wie ein Verstorbener beigesetzt wird, hat spürbare Wirkung auf die Trauer der Hinterbliebenen. Wichtig ist, noch einmal Abschied nehmen zu können: aussprechen, was gesagt werden muss, danken, eine letzte Berührung.</p>
     </div>
 
-    <div class="tabs reveal" data-tabs>
-      <div class="tabs__list" role="tablist" aria-label="Bestattungsarten">
-        <button role="tab" aria-selected="true" aria-controls="t-feuer" id="tb-feuer">Feuerbestattung</button>
-        <button role="tab" aria-selected="false" aria-controls="t-erd" id="tb-erd" tabindex="-1">Erdbestattung</button>
-        <button role="tab" aria-selected="false" aria-controls="t-see" id="tb-see" tabindex="-1">Seebestattung</button>
-        <button role="tab" aria-selected="false" aria-controls="t-anonym" id="tb-anonym" tabindex="-1">Anonyme Bestattung</button>
-      </div>
-      <div class="tabs__panels">
-        <div class="tab" role="tabpanel" id="t-feuer" aria-labelledby="tb-feuer">
-          <div class="tab__text">
-            <h3>Feuerbestattung</h3>
-            <p>Nach der Einäscherung wird die Urne in einem Urnengrab, einer Urnenwand oder einem Gemeinschaftsfeld beigesetzt. Eine Trauerfeier kann vorher am Sarg oder danach an der Urne stattfinden.</p>
-            <p class="tab__price">ab <strong>800 €</strong> inkl. MwSt.</p>
-          </div>
-          <a href="#preise" class="btn btn--line">Leistungen &amp; Preise</a>
+    <div class="kinds">
+      <article class="kind reveal">
+        <span class="kind__n">01</span>
+        <h3>Feuerbestattung</h3>
+        <p>Nach der Einäscherung wird die Urne in einem Urnengrab, einer Urnenwand oder einem Gemeinschaftsfeld beigesetzt. Die Trauerfeier kann vorher am Sarg oder danach an der Urne stattfinden.</p>
+        <p class="kind__price"><small>ab</small> 800 € <small>inkl. MwSt.</small></p>
+        <div class="kind__cta">
+          <a href="#preis-feuer" class="btn btn--glow" data-jump>Preise &amp; Leistungen</a>
         </div>
-        <div class="tab" role="tabpanel" id="t-erd" aria-labelledby="tb-erd" hidden>
-          <div class="tab__text">
-            <h3>Erdbestattung</h3>
-            <p>Die klassische Beisetzung im Sarg in einem Wahl- oder Reihengrab. Wir beraten Sie zur Auswahl von Sarg, Grabstätte und Ablauf der Trauerfeier auf den Erfurter Friedhöfen.</p>
-            <p class="tab__price">Individuelles Festpreis-Angebot</p>
-          </div>
-          <a href="#kontakt" class="btn btn--line">Angebot anfragen</a>
+      </article>
+      <article class="kind reveal" style="--d:.06s">
+        <span class="kind__n">02</span>
+        <h3>Erdbestattung</h3>
+        <p>Die klassische Beisetzung im Sarg in einem Wahl- oder Reihengrab. Wir beraten Sie zu Sarg, Grabstätte und Ablauf der Trauerfeier auf den Erfurter Friedhöfen.</p>
+        <p class="kind__price kind__price--sm">Individueller Festpreis</p>
+        <div class="kind__cta">
+          <a href="#kontakt" class="btn btn--glow" data-pick="Erdbestattung">Angebot anfragen</a>
         </div>
-        <div class="tab" role="tabpanel" id="t-see" aria-labelledby="tb-see" hidden>
-          <div class="tab__text">
-            <h3>Seebestattung</h3>
-            <p>Die Urne wird von einer Reederei auf See beigesetzt. Für Menschen, die das Meer geliebt haben. Auch als anonymes Komplettangebot ohne Trauerfeier möglich.</p>
-            <p class="tab__price">komplett <strong>1.800 €</strong> inkl. MwSt.</p>
-          </div>
-          <a href="#preise" class="btn btn--line">Was enthalten ist</a>
+      </article>
+      <article class="kind reveal" style="--d:.12s">
+        <span class="kind__n">03</span>
+        <h3>Seebestattung</h3>
+        <p>Die Urne wird von einer Reederei auf See beigesetzt, für Menschen, die das Meer geliebt haben. Als anonymes Komplettangebot ohne Trauerfeier.</p>
+        <p class="kind__price"><small>komplett</small> 1.800 € <small>inkl. MwSt.</small></p>
+        <div class="kind__cta">
+          <a href="#preis-see" class="btn btn--glow" data-jump>Was enthalten ist</a>
         </div>
-        <div class="tab" role="tabpanel" id="t-anonym" aria-labelledby="tb-anonym" hidden>
-          <div class="tab__text">
-            <h3>Anonyme Bestattung</h3>
-            <p>Beisetzung in einem Gemeinschaftsfeld ohne namentliche Kennzeichnung, ohne Grabpflege für die Angehörigen. Als Komplettangebot inklusive aller Gebühren.</p>
-            <p class="tab__price">komplett <strong>1.800 €</strong> inkl. MwSt.</p>
-          </div>
-          <a href="#preise" class="btn btn--line">Was enthalten ist</a>
+      </article>
+      <article class="kind reveal" style="--d:.18s">
+        <span class="kind__n">04</span>
+        <h3>Anonyme Bestattung</h3>
+        <p>Beisetzung in einem Gemeinschaftsfeld ohne Namenskennzeichnung und ohne Grabpflege für die Angehörigen. Komplett inklusive aller Gebühren.</p>
+        <p class="kind__price"><small>komplett</small> 1.800 € <small>inkl. MwSt.</small></p>
+        <div class="kind__cta">
+          <a href="#preis-urne" class="btn btn--glow" data-jump>Was enthalten ist</a>
         </div>
-      </div>
+      </article>
     </div>
 
     <div class="graves">
@@ -261,7 +257,7 @@
     </div>
 
     <div class="prices">
-      <article class="price reveal">
+      <article class="price reveal" id="preis-feuer">
         <p class="price__tag">Preisbeispiel</p>
         <h3>Feuerbestattung anonym</h3>
         <p class="price__num"><small>ab</small> <span class="count" data-to="800">800</span> €</p>
@@ -289,7 +285,7 @@
         <a href="#kontakt" class="btn btn--glow" data-pick="Feuerbestattung komplett">Angebot anfordern</a>
       </article>
 
-      <article class="price reveal">
+      <article class="price reveal" id="preis-urne">
         <p class="price__tag">Komplettangebot · alles inklusive</p>
         <h3>Urnenbestattung anonym</h3>
         <p class="price__num"><span class="count" data-to="1800">1.800</span> €</p>
@@ -311,7 +307,7 @@
         <a href="#kontakt" class="btn btn--line" data-pick="Komplettangebot Urnenbestattung">Angebot anfordern</a>
       </article>
 
-      <article class="price reveal">
+      <article class="price reveal" id="preis-see">
         <p class="price__tag">Komplettangebot · alles inklusive</p>
         <h3>Seebestattung anonym</h3>
         <p class="price__num"><span class="count" data-to="1800">1.800</span> €</p>
@@ -482,6 +478,6 @@
   <a href="#kontakt" class="callbar__alt">Rückruf</a>
 </div>
 
-<script src="assets/app.js?v=3" defer></script>
+<script src="assets/app.js?v=4" defer></script>
 </body>
 </html>
